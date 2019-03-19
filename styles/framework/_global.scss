@@ -1,0 +1,218 @@
+/**
+ *
+ * Theme Name:
+ * Author: Marcus Jackson
+ * Author URI: http://www.mjackson89.com
+ * Description:
+ * Version: 2.0.0
+ * Text Domain:
+ * Tags: responsive, white, bootstrap, sass
+ *
+**/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Global Styles
+# p, a & span Styles
+# Link Styles
+# Navigation Styles
+# Table Styles
+# Button Styles
+# Image Styles
+# Form Styles
+# Section Styles
+# Footer Styles
+# Animation
+# Icons
+# Misc.
+--------------------------------------------------------------*/
+
+@charset "UTF-8";
+
+*, *::after, *::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* ============================================= */
+/*                  Global Styles                */
+/* ============================================= */
+body {
+	*font-size: small;
+  text-rendering: optimizeLegibility;
+ 	/* this causes problems in Chrome for Windows and on iOS */
+  -webkit-overflow-scrolling: touch;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	&.proposal-page {
+		color: #444;
+		font-family: $open-sans, $noto-sans, $helvetica, sans-serif;
+		line-height: 1.5rem;
+		overflow-x: inherit;
+	}
+}
+html { overflow-y: scroll; }
+html:not([lang=ru]):not([lang=zh]):not([lang=ko]) .typeset p {
+	-webkit-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
+  -moz-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
+  -ms-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
+  -o-font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
+  font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
+  line-height: 2rem;
+  margin-bottom: 1.33999rem;
+  padding-top: .66001rem
+}
+a {
+	margin: $zero;
+	padding: $zero;
+	font-size: $hundred;
+	vertical-align: baseline;
+	background: $transparent;
+}
+input, select { vertical-align: middle; }
+select, input, textarea, button { font: 99% sans-serif; }
+body, select, input, textarea { color: #888; }
+.hidden { display: $none; }
+.clear { clear: $both; }
+.left { float: $left; }
+.right { float: $right; }
+.fa, .fas, .far, .fal, .fab {
+	font: normal normal normal 14px/1 $fontawesome;
+}
+image {
+	max-width: $hundred;
+	width: $hundred;
+}
+
+/*@font-face {
+	font-family: $open-sans;
+	src: url('../../fonts/Open_Sans/OpenSans-Regular.ttf');
+  src: url('../../fonts/Open_Sans/OpenSans-Regular.ttf?#iefix') format('truetype'),
+  url('../../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+/* ============================================= */
+/*               p, a & span Styles              */
+/* ============================================= */
+p, a {
+	font-size: 0.9em;
+	margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: $five-pixel $zero;
+	padding: $zero;
+	font-family: $open-sans, $noto-sans, $helvetica, sans-serif;
+}
+h1 {
+	font-size: 2em;
+	line-height: $fifthty-pixel;
+}
+h2 {
+	font-size: 1.4em;
+ 	line-height: 45px;
+}
+h3 {
+	font-size: 1.2em;
+	line-height: $forty-pixel;
+}
+h4 {
+	font-size: 1em;
+	line-height: $thirty-pixel;
+}
+h5 {
+	font-size: $twenty-pixel;
+ 	line-height: 25px;
+}
+h6 {
+	font-size: 18px;
+	line-height: 23px;
+}
+img { max-width: $hundred; }
+small {
+	font-size: 75%;
+	font-weight: 300;
+}
+strong, .bold {font-weight: $bold; }
+em { font-style: italic; }
+
+
+/* ================================= */
+/*            Link Styles            */
+/* ================================= */
+a { cursor: pointer; }
+.link {
+	color: $busbank-red;
+	@include transition(all 0.3s ease);
+	&:hover,
+	&:active,
+	&:focus {
+		color : $darker-red;
+		text-decoration: $none;
+	}
+}
+.underlined { text-decoration: $underlined; }
+.none-decoration { text-decoration: $none; }
+
+.caps {
+	text-transform: uppercase;
+}
+hr {
+	clear: $both;
+	&.style-one {
+		width: 95%;
+		border: $zero;
+		height: $one-pixel;
+		margin: $ten-pixel $auto;
+  	background: #444;
+    background-image: -webkit-linear-gradient(left, #ccc, #444, #ccc);
+    background-image: -moz-linear-gradient(left, #ccc, #444, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #444, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #444, #ccc);
+	}
+}
+
+
+/* ============================= */
+/*          Colors Styles        */
+/* ============================= */
+
+
+/* ================================================================= */
+/*        Print Styles: Inline to avoid required HTTP connection     */
+/* ================================================================= */
+@media print {
+	* {
+		background: $transparent;
+		color: $black;
+		/* Black prints faster: h5bp.com/s */
+		box-shadow: $none;
+		text-shadow: $none;
+	}
+	a, a:visited { text-decoration: $underlined; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after { content: ""; }
+	pre, blockquote {
+		border: $one-pixel solid #999;
+		page-break-inside: avoid;
+	}
+	thead { display: table-header-group; /* h5bp.com/t */ }
+	tr, img { page-break-inside: avoid; }
+	img { max-width: $hundred; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 {
+		orphans: $three;
+		widows: $three;
+	}
+	h2, h3 { page-break-after: avoid; }
+}

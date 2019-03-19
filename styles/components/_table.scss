@@ -1,0 +1,161 @@
+table {
+  position: $relative;
+  widows: inherit;
+  width: $hundred;
+  display: inline-table;
+  tr {
+    outline: $none;
+    th {
+      display: block;
+      font-weight: bold;
+      cursor: default;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+    }
+  }
+  &.account, &.sales_rep_info {
+    tbody {
+      tr {
+        td {
+          @include mobile {
+            display: $block;
+            word-wrap: break-word;
+          }
+          @include desktop {
+            display: table-cell;  
+          }
+        }
+      }
+    }
+  }
+  &.itinerary {
+    margin: $ten-pixel auto;
+    display: table;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    background-color: #ebf1f4;
+    border-radius: $two-pixel;
+    position: $relative;
+    overflow: $hidden;
+  	height: $auto;
+  	padding: $ten-pixel $ten-pixel;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    h1 {
+  		font-size: 1.4em;
+      letter-spacing: 0.14;
+    }
+    h2 { font-size: 1em; }
+  }
+  &.inline {
+    tr {
+      margin: $twenty-pixel 15px;
+      position: $relative;
+      height: $auto;
+      display: table-cell;
+      vertical-align: top;
+      @include mobile {
+        margin: $zero $auto;
+        display: $block;
+      }
+      th {
+        position: $relative;
+        display: $inline-block;
+        vertical-align: middle;
+        border-collapse: separate !important;
+        margin: $zero-pixel 15px $ten-pixel $zero-pixel;
+        width: $auto;
+        @include mobile {
+          display: $block;
+          margin: 15px $zero-pixel $zero-pixel $zero-pixel;
+        }
+      }
+      td {
+        display: $inline-block;
+        margin: $zero-pixel $twenty-pixel $ten-pixel $zero-pixel;
+        vertical-align: top;
+        text-align: $left;
+        float: $left;
+        display: block;
+        &#description_text {
+          display: table-caption;
+          @include mobile {
+            display: $block;
+            width: $auto;
+          }
+        }
+        &#quantity_text, &#price_text, &#amount_text {
+          display: table-cell;
+        }
+        @include mobile {
+          display: $block;
+          float: $none;
+        }
+      }
+    }
+  }
+  tbody {
+    &.booking {
+      cursor: pointer;
+      border-spacing: $zero;
+      width: $hundred;
+      table-layout: fixed;
+      outline: $none;
+      padding: 16px $zero;
+      -webkit-user-select: $none;
+      -moz-user-select: $none;
+      -ms-user-select: $none;
+      text-align: $left;
+      @include tablet {
+        display: block;
+      }
+    }
+    &.total {
+      display: block;
+      position: $relative;
+      width: min-content;
+      table-layout: fixed;
+      margin: $ten-pixel $zero-pixel $twenty-pixel;
+    }
+    tr {
+      position: $relative;
+      height: $auto;
+      td {
+        font-family: $open-sans, sans-serif;
+        display: $block;
+        font-size: 0.9em;
+        &.location {
+          width: $hundred;
+          font-size: 1em;
+          letter-spacing: 0.14px;
+          color: #444;
+        }
+        &.depart_arrival {
+          width: $hundred;
+          display: $inline-block;
+          clear: $both;
+        }
+        &.stop, &.date {
+          display: $inline-block;
+          clear: $both;
+          width: $auto;
+        }
+        &.action {
+          clear: $left;
+          display: $inline-block;
+          position: $relative;
+        }
+      }
+    }
+  }
+  .line {
+    border: 0.5px solid #444;
+    width: $hundred;
+  }
+}

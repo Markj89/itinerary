@@ -1,0 +1,21 @@
+// Base
+@import '../variables';  // Variables
+
+@import '../base/layout';  // Media Query Layout
+@import '../base/mixins';  // Mixins, Animations & Transitions
+
+// Framework
+@import '../framework/rtl';	// Right-to-Left CSS
+@import '../framework/global';	// Global CSS
+
+//Components
+@import '../components/nav';  // Navigation Styles
+@import '../components/form';  // Form Styles
+@import '../components/section';  // Section Styles
+@import '../components/button';  // Button Styles
+@import '../components/table';  // Table Styles
+@import '../components/footer';  // Footer Styles
+@import '../components/animation';  // Footer Styles
+@import '../framework/animate.css';
+
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';

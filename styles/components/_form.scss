@@ -1,0 +1,199 @@
+/* ============================================= */
+/*                	 Form Styles          		 	 */
+/* ============================================= */
+form {
+  label {
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: $one-pixel;
+    @include font-smoothing(on);
+    &.label { // Label Class
+      display: $block;
+      text-align: $left;
+    }
+    &.inline-label {
+      cursor: pointer;
+      display: $inline-block;
+      width: $auto;
+    }
+    &.label-wrapper {
+      padding: $five-pixel $five-pixel;
+      border-radius: $two-pixel;
+    }
+  }
+  .first-user {
+		width: $hundred;
+		display: $block;
+		clear: $both;
+	}
+	.second-user {
+    width: calc((((100% - 10px) / 2) * 1) + 0px);
+		display: $inline;
+		margin-right: $three-pixel;
+		margin-bottom: 15px;
+	}
+  .third-user {
+		width: $sixty;
+		margin-right: $zero-pixel;
+		padding-left: $five-pixel;
+		padding-right: $five-pixel;
+		margin-bottom: 16px;
+		display: $block;
+		float: $left;
+	}
+	.fourth-user {
+		width: $hundred;
+		display: $inline;
+		margin-right: $zero-pixel;
+		padding-left: $five-pixel;
+		padding-right: $five-pixel;
+		margin-bottom: 16px;
+		border-radius: $zero;
+	}
+	.fifth-user {
+		width: 33.3333%;
+		float: $left;
+		position: $relative;
+		margin-right: 86px;
+		padding-left: $five-pixel;
+		padding-right: $five-pixel;
+		margin-bottom: 16px;
+		@include mobile {
+			width: $hundred;
+			margin-top: 15px;
+		}
+	}
+	.sixth-user {
+		float: $left;
+		position: $relative;
+		@include mobile {
+			width: $hundred;
+			margin-top: 15px;
+		}
+	}
+	@include mobile {
+		&.first-user,
+		&.second-user {
+			width: $hundred;
+			display: $block;
+			margin-bottom: 16px;
+		}
+		&.fifth-user { width: $hundred; }
+	}
+	input[type="text"], input[type="email"],
+	input[type="date"], input[type="tel"],
+	input[type="url"], input[type="password"],
+	input[type="number"], input[type="checkbox"] {
+		font-family: $fontawesome, $open-sans;
+		font-style: $normal;
+		font-weight: $normal;
+		text-decoration: inherit;
+		margin-bottom: $ten;
+		padding-left: $ten;
+	}
+  input[type="checkbox"] {
+		position: $relative;
+		margin: $one-pixel $zero-pixel;
+		width: $auto;
+		&:not(:checked) { box-shadow: 0px 1px 3px; }
+		&:active, &:checked { background: rgba(0, 0, 0, .075); }
+	}
+	input {
+		margin-bottom: $ten-pixel;
+		padding-left: $ten-pixel;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+    &.form-control {
+			border: $zero;
+			overflow: $hidden;
+			position: $relative;
+      &:focus {
+				opacity: $one;
+				content: " ";
+				outline: $none;
+				overflow: $hidden;
+				position: $relative;
+				&::-moz-placeholder {
+					opacity: $one;
+			  }
+			  &:-ms-input-placeholder {
+					opacity: $one;
+			  }
+			  &::-webkit-input-placeholder {
+					opacity: $one;
+			  }
+			}
+		}
+    &.form-inline {
+			display: $inline-block !important;
+			padding-left: $five-pixel;
+			padding-right: $five-pixel;
+      margin: $zero-pixel $five-pixel $twenty-pixel;
+      vertical-align: unset;
+			.right {
+				float: $right;
+				display: $inline-block;
+				position: $relative;
+				vertical-align: $middle;
+			}
+			.left {
+				float: $left;
+				display: $inline-block;
+				position: $relative;
+				vertical-align: $middle;
+			}
+		}
+  }
+  textarea {
+		border: $one-pixel $black solid;
+		border-radius: $two-pixel;
+	}
+	fieldset {
+		margin-left: $auto;
+		margin-right: $auto;
+	}
+	select {
+		position: $relative;
+		background-attachment: $none;
+		display: $inline-block;
+		width: $auto;
+		outline: $none;
+		cursor: $pointer;
+		z-index: $two;
+		border: $none;
+		padding: $ten-pixel $ten-pixel $ten-pixel $five-pixel;
+		text-overflow: '';
+		text-indent: $five-pixel;
+		&[multiple=multiple] {
+			height: $auto;
+			border: $one-pixel solid #cbcbcb;
+			border-radius: $three-pixel;
+			-webkit-box-shadow: $zero $zero $one-pixel rgba($zero, $zero, $zero, 0.1), inset $zero $zero $ten-pixel rgba($zero, $zero, $zero, 0.07);
+			-moz-box-shadow: $zero $zero $one-pixel rgba($zero, $zero, $zero, 0.1), inset $zero $zero $ten-pixel rgba($zero, $zero, $zero, 0.07);
+			-ms-box-shadow: $zero $zero $one-pixel rgba($zero, $zero, $zero, 0.1), inset $zero $zero $ten-pixel rgba($zero, $zero, $zero, 0.07);
+			-o-box-shadow: $zero $zero $one-pixel rgba($zero, $zero, $zero, 0.1), inset $zero $zero $ten-pixel rgba($zero, $zero, $zero, 0.07);
+			box-shadow: $zero $zero $one-pixel rgba($zero, $zero, $zero, 0.1), inset $zero $zero $ten-pixel rgba($zero, $zero, $zero, 0.07);
+			&:hover {
+				border-color: #ccc;
+				-webkit-box-shadow: $zero $zero 15px rgba($zero, $zero, $zero, 0.2);
+				-moz-box-shadow: $zero $zero 15px rgba($zero, $zero, $zero, 0.2);
+				-ms-box-shadow: $zero $zero 15px rgba($zero, $zero, $zero, 0.2);
+				-o-box-shadow: $zero $zero 15px rgba($zero, $zero, $zero, 0.2);
+				box-shadow: $zero $zero 15px rgba($zero, $zero, $zero, 0.2);
+			}
+		}
+		option[disabled] {
+			color: #eee;
+			text-shadow: $none;
+			border: $none;
+		}
+		&:-moz-focusring {
+			color: $transparent;
+			text-shadow: $zero $zero $zero #888;
+		}
+		&::-ms-expand { display: $none; }
+	}
+}

@@ -1,0 +1,13 @@
+/* ============================================= */
+/*               Navigation Styles               */
+/* ============================================= */
+.navbar {
+  border: $none;
+  background-color: $busbank-red;
+  position: $relative;
+  display: $flex;
+  @include mobile {
+    .navbar-inverse { position: $absolute; }
+    .navbar-header { height: 68px; }
+  }
+}

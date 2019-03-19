@@ -1,0 +1,61 @@
+// Transitions(all 1s, ease-out)
+@mixin transition($property: all, $speed: 0.3s, $effect: ease-in-out) {
+	-webkit-transition: $property, $speed, $effect;
+	-moz-osx-transition: $property, $speed, $effect;
+	-ms-transition: $property, $speed, $effect;
+	-o-transition: $property, $speed, $effect;
+	transition: $property, $speed, $effect;
+}
+
+// Antialiasing mode font rendering
+@mixin font-smoothing($value: antialiased) {
+	@if $value == antialiased {
+		-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	}
+	@else {
+		-webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+	}
+}
+
+// Hide Effect
+@mixin hide($one) {
+	@include transition(opacity, 0.3s ease-out);
+}
+
+@mixin show($zero) {
+	@include transition(opacity, 0.3s ease-in);
+}
+
+// Hover Effect
+@mixin hover-button($darker-red) {
+	@include transition(background-color,  ease, box-shadow .28s cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+// Box Shadow
+@mixin box-shadow($value: none) {
+	-webkit-box-shadow: $none;
+	-moz-box-shadow: $none;
+	-o-box-shadow: $none;
+	-ms-box-shadow: $none;
+	box-shadow: $none;
+}
+
+@mixin retina {
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (min--moz-device-pixel-ratio: 2),
+		only screen and (-o-min-device-pixel-ratio: 2/1),
+		only screen and (min-device-pixel-ratio: 2),
+		only screen and (min-resolution: 192dpi),
+		only screen and (min-resolution: 2dppx) {
+			@content;
+		}
+}
+
+@mixin print {
+	@media print {
+		@content;
+	}
+}
